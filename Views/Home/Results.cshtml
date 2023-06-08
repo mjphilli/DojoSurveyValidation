@@ -1,0 +1,18 @@
+<h1>Submitted Info</h1>
+
+<h3>Name: @Model.Name</h3>
+<h3>Location: @Model.Location</h3>
+<h3>Favorite Language: @Model.Language</h3>
+@if (string.IsNullOrEmpty(Model.Comment))
+{
+    <h3>Comment: <span style="color: gray">No comment</span></h3>
+}
+else
+{
+    <h3>Comment: @Model.Comment</h3>
+}
+
+
+<a href='/'>
+    <input type='button' value='Go Back' />
+</a>

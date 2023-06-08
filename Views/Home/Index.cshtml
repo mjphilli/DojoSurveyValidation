@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Survey
+<form asp-action="addInfo" asp-controller="Home" method="POST">
+    <label asp-for="Name">Your Name:</label>
+    <input asp-for="Name" type="text" name="Name">
+    <span class="text-danger" asp-validation-for="Name"></span><br/>
+    <label asp-for="Location">Dojo Location:</label>
+    <input asp-for="Location" type="text" name="Location">
+    <span class="text-danger" asp-validation-for="Location"></span><br/>
+    <label asp-for="Language">Favorite Language:</label>
+    <select asp-for="Language" name="Language">
+        <option value="">Please select a language</option>
+        <option value="C#">C#</option>
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+    </select>
+    <span class="text-danger" asp-validation-for="Language"></span><br/>
+    <label asp-for="Comment">Comment (optional):</label><br/>
+    <textarea asp-for="Comment" name="Comment"></textarea>
+    <span class="text-danger" asp-validation-for="Comment"></span><br/>
+
+    <input type="submit" value="Submit">
+</form>
